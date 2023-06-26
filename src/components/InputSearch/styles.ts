@@ -63,3 +63,15 @@ export const BoxHero = styled(Link)`
     }
   }
 `
+export const BoxInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-items: flex-start;
+
+  label {
+    font-weight: 500;
+    color: ${(props) => props.theme.colors.gray[500]};
+    font-size: 1.125rem;
+  }
+`

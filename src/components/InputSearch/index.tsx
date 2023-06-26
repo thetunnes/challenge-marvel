@@ -1,6 +1,11 @@
 import { MouseEventHandler, useState, useEffect, useRef } from 'react'
 import { api } from '../../lib/api'
-import { BoxHero, BoxListHeroes, InputSearchContainer } from './styles'
+import {
+  BoxHero,
+  BoxInput,
+  BoxListHeroes,
+  InputSearchContainer,
+} from './styles'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -75,13 +80,18 @@ export function InputSearch() {
 
   return (
     <InputSearchContainer>
-      <input
-        type="text"
-        onChange={({ target }) => setNameSearch(target.value)}
-        ref={inputRef}
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-      />
+      <BoxInput>
+        <label htmlFor="char">Character</label>
+        <input
+          id="char"
+          type="text"
+          onChange={({ target }) => setNameSearch(target.value)}
+          ref={inputRef}
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
+          placeholder="Enter name of the character you desire"
+        />
+      </BoxInput>
       {listHeroes.length || isLoading ? (
         <BoxListHeroes ref={boxListRef} onClick={handleBoxClick}>
           {listHeroes.length ? (
