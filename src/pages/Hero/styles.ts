@@ -10,12 +10,6 @@ export const HeroContainer = styled.main`
   gap: 1rem;
   padding: 2rem;
 
-  img {
-    border-radius: 8px;
-    aspect-ratio: 2/1;
-    object-fit: cover;
-  }
-
   h1 {
     font-size: 1.25rem;
     color: ${(props) => props.theme.colors.gray[800]};
@@ -25,6 +19,26 @@ export const HeroContainer = styled.main`
   .center {
     margin: 0 auto;
   }
+`
+
+export const HeroContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  > div {
+    flex: 1;
+  }
+`
+
+export const ImgHero = styled.img`
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-height: 70vh;
+  max-width: 512px;
+  margin: 0 auto;
 `
 
 export const PrevPage = styled.button`

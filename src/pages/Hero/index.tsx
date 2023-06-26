@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { HeroContainer, PrevPage } from './styles'
+import { HeroContainer, ImgHero, PrevPage } from './styles'
 import { api } from '../../lib/api'
 import { Hero } from '../../components/InputSearch'
 import Skeleton from 'react-loading-skeleton'
@@ -60,16 +60,18 @@ export function HeroPage() {
         </>
       ) : (
         <>
-          <img
+          <ImgHero
             src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
             alt=""
           />
-          <h1>{hero.name}</h1>
-          <p>
-            {hero.description.length
-              ? hero.description
-              : 'This hero not have description.'}
-          </p>
+          <div>
+            <h1>{hero.name}</h1>
+            <p>
+              {hero.description.length
+                ? hero.description
+                : 'This hero not have description.'}
+            </p>
+          </div>
         </>
       )}
     </HeroContainer>

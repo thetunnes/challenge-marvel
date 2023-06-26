@@ -24,6 +24,8 @@ export const BoxListHeroes = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: auto;
+  max-height: calc(48px * 5);
 
   background: ${(props) => props.theme.colors.gray[300]};
   border: 1px solid ${(props) => props.theme.colors.gray[500]};
@@ -46,6 +48,7 @@ export const BoxHero = styled(Link)`
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
+    filter: grayscale(0.8);
   }
 
   p {
@@ -55,7 +58,11 @@ export const BoxHero = styled(Link)`
 
   &:hover {
     background-color: ${(props) => props.theme.colors.gray[400]};
-    transition: all 0.4s;
+    transition: all 0.6s;
+
+    img {
+      filter: grayscale(0);
+    }
 
     p {
       transition: color 0.4s;
